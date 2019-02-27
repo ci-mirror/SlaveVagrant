@@ -3,7 +3,8 @@ node('Windows-Server-2012-R2') {
     echo currentBuild.id
     echo currentBuild.fullProjectName
     echo currentBuild.projectName
-    withEnv(['build_folder=$(currentBuild.fullProjectName)']) {
+    def x =currentBuild.fullProjectName
+    withEnv(['build_folder=${x}']) {
         bat label: 'new_folder', script: 'md %build_folder%'
     }
 }
