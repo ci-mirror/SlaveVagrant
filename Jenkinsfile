@@ -5,6 +5,9 @@ node('Windows-Server-2012-R2') {
     echo currentBuild.projectName
     def x =currentBuild.fullProjectName
     withEnv(['build_folder=${env.x}']) {
-        bat label: 'new_folder', script: 'md %build_folder%'
+        bat label: 'new_folder', script: '''md %build_folder%
+        cd %build_folder%
+        vagrant init opentable/win-2012r2-standard-amd64-nocm
+        vagrant up'''
     }
 }
