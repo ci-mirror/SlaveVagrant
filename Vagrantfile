@@ -16,7 +16,7 @@ windows_version = Gem::Version.new("1.6.0")
 
 Vagrant.configure("2") do |config|
     config.vm.define "vagrant-windows-2012-r2"
-    config.vm.box = "windows_2012_r2"
+    config.vm.box = "win-2012r2-standard-amd64-nocm-conan"
 
     if current_version < windows_version
       if !Vagrant.has_plugin?('vagrant-windows')
