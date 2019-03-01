@@ -13,8 +13,9 @@ pipeline {
         }
     }
     stages {
-        echo 'begin...'
-        checkout scm
-        echo 'end...'
+        stage {
+            echo 'begin...'
+            echo 'end...'
+        }
     }
 }
