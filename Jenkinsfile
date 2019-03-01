@@ -1,6 +1,6 @@
 node('Windows-Server-2012-R2') {
-    env.BUILD_FOLDER=currentBuild.id
     dir(currentBuild.id) {
+        git changelog: false, poll: false, url: 'http://172.16.65.44/conanos/jenkins/slavevagrant'
         bat label: 'vagrant', script: '''vagrant box list'''
     }
 }
