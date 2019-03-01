@@ -13,7 +13,7 @@ pipeline {
         }
     }
     stages {
-        stage {
+        stage('Test') {
             echo 'begin...'
             echo 'end...'
         }
